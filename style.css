@@ -1,0 +1,202 @@
+:root {
+  --background: #ece7d1;
+  --color: #362402;
+  --base: #8a7650;
+  --base-hover: #b29b72;
+  --accent: #8e977d;
+  --shadow: rgba(0, 0, 0, 0.8);
+}
+
+@font-face {
+  font-family: "YellowTail";
+  src: url(src/font/Yellowtail/Yellowtail-Regular.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  color: var(--color);
+  transition: all 0.5s ease-in-out;
+  color: var(--color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+body {
+  width: 100vw;
+  background-color: var(--background);
+  overflow-x: hidden;
+}
+section {
+  width: 100%;
+}
+.button-nav {
+  background-color: var(--base);
+}
+.button-nav:hover {
+  background-color: var(--base-hover);
+}
+.button-1 {
+  width: 200px;
+  height: 40px;
+  background-color: var(--base);
+  margin-block: 20px;
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-1:hover {
+  scale: 1.1;
+  background-color: var(--base-hover);
+}
+
+#header {
+  width: 100%;
+  height: 60px;
+  background-color: var(--base);
+  position: fixed;
+  display: flex;
+  z-index: 100;
+  opacity: 0.8;
+}
+#header label {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  float: left;
+}
+#header input:checked ~ nav {
+  display: flex;
+}
+#header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  float: left;
+  position: absolute;
+  top: 60px;
+  display: none;
+}
+#header nav a {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: white;
+  text-transform: uppercase;
+}
+#header span {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 800;
+  font-style: italic;
+}
+
+#home {
+  height: 100vh;
+  background: url(src/img/photo/hero-image.png) no-repeat center center/cover;
+  color: var(--color);
+}
+#home #gradientOverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#home #gradientOverlay #halloBox {
+  height: 300px;
+}
+#home #gradientOverlay #halloBox h1 {
+  font-family: "YellowTail";
+  text-shadow: 2px 2px 4px var(--shadow);
+}
+#home #gradientOverlay #halloBox p {
+  font-weight: 100;
+}
+
+@media (min-width: 425px) and (max-width: 1024px) {
+  html {
+    font-size: 12px;
+  }
+  #header nav {
+    width: 100%;
+    margin: 0;
+    gap: 0;
+  }
+  #home #gradientOverlay {
+    background: linear-gradient(
+      180deg,
+      rgb(236, 231, 209) 30%,
+      rgba(141, 140, 127, 0) 97%
+    );
+    padding: 0;
+  }
+  #home #gradientOverlay #halloBox {
+    background-color: var(--accent);
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #home #gradientOverlay #halloBox h1 {
+    color: white;
+    text-align: center;
+    font-size: 4rem;
+  }
+  #home #gradientOverlay #halloBox p {
+    text-align: center;
+    margin-left: 0;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  html {
+    font-size: 14px;
+  }
+  #header nav {
+    width: 250px;
+    margin: 5px;
+  }
+  #home #gradientOverlay {
+    background: linear-gradient(
+      90deg,
+      rgb(236, 231, 209) 30%,
+      rgba(224, 214, 88, 0) 97%
+    );
+  }
+  #home #gradientOverlay #halloBox {
+    width: 600px;
+    margin-left: 30px;
+  }
+  #home #gradientOverlay #halloBox h1 {
+    width: 100%;
+    font-size: 5rem;
+  }
+  #home #gradientOverlay #halloBox p {
+    font-size: 2rem;
+    margin-left: 30px;
+  }
+}
