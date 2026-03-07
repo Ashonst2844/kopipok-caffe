@@ -56,6 +56,15 @@ section {
   scale: 1.1;
   background-color: var(--base-hover);
 }
+.sect-title {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-family: "YellowTail";
+}
 
 #header {
   width: 100%;
@@ -128,13 +137,62 @@ section {
 }
 #home #gradientOverlay #halloBox h1 {
   font-family: "YellowTail";
-  text-shadow: 2px 2px 4px var(--shadow);
 }
 #home #gradientOverlay #halloBox p {
   font-weight: 100;
 }
 
-@media (min-width: 425px) and (max-width: 1024px) {
+#about #timeline {
+  width: 100%;
+  position: relative;
+}
+#about #timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--color);
+}
+#about #timeline .time-box {
+  width: 50%;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+}
+#about #timeline .time-box h1 {
+  width: 100px;
+  height: 50px;
+  background-color: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+#about #timeline .time-box:hover p {
+  opacity: 1;
+  transform: translateY(0);
+}
+#about #timeline .time-box p {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+#about #timeline .time-box:nth-child(odd) {
+  left: 0;
+  text-align: right;
+  align-items: end;
+}
+#about #timeline .time-box:nth-child(even) {
+  left: 50%;
+  text-align: left;
+  align-items: baseline;
+}
+
+@media (max-width: 480px) {
   html {
     font-size: 12px;
   }
@@ -164,6 +222,7 @@ section {
     color: white;
     text-align: center;
     font-size: 4rem;
+    text-shadow: 2px 2px 4px var(--shadow);
   }
   #home #gradientOverlay #halloBox p {
     text-align: center;
