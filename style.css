@@ -4,6 +4,7 @@
   --base: #8a7650;
   --base-hover: #b29b72;
   --accent: #8e977d;
+  --accent-hover: #a6b787;
   --shadow: rgba(0, 0, 0, 0.8);
 }
 
@@ -58,12 +59,15 @@ section {
 }
 .sect-title {
   width: 100%;
-  height: 120px;
+  height: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
   font-family: "YellowTail";
+}
+.active {
+  display: grid !important;
 }
 
 #header {
@@ -152,7 +156,7 @@ section {
   left: 50%;
   top: 0;
   bottom: 0;
-  width: 4px;
+  width: 2px;
   background: var(--color);
 }
 #about #timeline .time-box {
@@ -192,6 +196,86 @@ section {
   align-items: baseline;
 }
 
+#menu {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+#menu #menuTabs {
+  display: flex;
+  gap: 5px;
+  height: calc(100%-120px);
+}
+#menu #menuTabs input[type="radio"] {
+  display: none;
+}
+#menu #menuTabs label {
+  background-color: var(--accent);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#menu #menuTabs label:hover {
+  background-color: var(--accent-hover);
+}
+#menu #menuDisplay .display {
+  width: 100%;
+  height: 100%;
+  display: none;
+  gap: 10px;
+  padding: 10px;
+  overflow-x: scroll;
+}
+#menu #menuDisplay .display .products {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#menu #menuDisplay .display .products:hover {
+  opacity: 1;
+}
+#menu #menuDisplay .display .products::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    var(--background) 30%,
+    rgba(0, 0, 0, 0) 90%
+  );
+}
+#menu #menuDisplay .display .products h1 {
+  z-index: 50;
+  font-family: "YellowTail";
+  font-size: 3rem;
+}
+#menu #menuDisplay .display .products button {
+  width: 100px;
+  height: 30px;
+  background-color: var(--accent);
+  margin-block: 20px;
+  z-index: 50;
+}
+#menu #menuDisplay .display .products button:hover {
+  background-color: var(--accent-hover);
+}
+
 @media (max-width: 480px) {
   html {
     font-size: 12px;
@@ -229,6 +313,22 @@ section {
     margin-left: 0;
     font-size: 2rem;
   }
+  #menu #menuTabs {
+    width: 100%;
+    height: 5%;
+    justify-content: center;
+  }
+  #menu #menuTabs label {
+    width: 100px;
+  }
+  #menu #menuDisplay {
+    width: 100%;
+    height: 75%;
+  }
+  #menu #menuDisplay .display {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1440px) {
@@ -257,5 +357,28 @@ section {
   #home #gradientOverlay #halloBox p {
     font-size: 2rem;
     margin-left: 30px;
+  }
+  #menu #menuTabs {
+    width: 30%;
+    height: 80%;
+    flex-direction: column;
+  }
+  #menu #menuTabs label {
+    width: 100%;
+    height: 60px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    transform: translateX(0);
+  }
+  #menu #menuTabs label:hover {
+    transform: translateX(-20px);
+  }
+  #menu #menuDisplay {
+    width: 70%;
+    height: 80%;
+  }
+  #menu #menuDisplay .display {
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto;
   }
 }

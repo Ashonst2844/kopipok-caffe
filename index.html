@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KOPIPOK Café</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="responsive.css" />
   </head>
   <body>
     <section id="header">
@@ -16,7 +15,7 @@
       <nav>
         <a href="#home" class="button-nav">Home</a>
         <a href="#about" class="button-nav">About Us</a>
-        <a href="#" class="button-nav">Menu</a>
+        <a href="#menu" class="button-nav">Menu</a>
         <a href="#" class="button-nav">Merchandise</a>
         <a href="#" class="button-nav">Membership</a>
         <a href="#" class="button-nav">Reserve</a>
@@ -68,6 +67,33 @@
           <h1>2027</h1>
           <p><i>(being planned and in progress...)</i></p>
         </div>
+      </div>
+    </section>
+    <section id="menu">
+      <h1 class="sect-title">Our Menus</h1>
+      <div id="menuTabs">
+        <input
+          type="radio"
+          name="menuList"
+          id="coffeeTab"
+          value="coffee"
+          checked
+        /><label for="coffeeTab">Coffee</label>
+        <input type="radio" name="menuList" id="teaTab" value="tea" /><label
+          for="teaTab"
+          >Tea</label
+        >
+        <input
+          type="radio"
+          name="menuList"
+          id="pastryTab"
+          value="pastry"
+        /><label for="pastryTab">Pastry</label>
+      </div>
+      <div id="menuDisplay">
+        <div id="coffee" class="display active"></div>
+        <div id="tea" class="display"></div>
+        <div id="pastry" class="display"></div>
       </div>
     </section>
     <script src="script.js"></script>

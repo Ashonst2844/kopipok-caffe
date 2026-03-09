@@ -1,0 +1,55 @@
+[
+    {
+        "coffee" : [
+            {
+                "name" : "Americano",
+                "image" : "americano",
+                "price" : 20
+            },
+            {
+                "name" : "Esspreso",
+                "image" : "esspreso",
+                "price" : 20
+            },
+            {
+                "name" : "Latte",
+                "image" : "latte",
+                "price" : 30
+            },
+            {
+                "name" : "Mocha",
+                "image" : "mocha",
+                "price" : 30
+            }
+        ],
+        "tea" : [
+            {
+                "name" : "Matcha",
+                "image" : "matcha",
+                "price" : 30
+            },
+            {
+                "name" : "Tea",
+                "image" : "original-tea",
+                "price" : 15
+            },
+            {
+                "name" : "ThaiTea",
+                "image" : "thai-tea",
+                "price" : 30
+            }
+        ],
+        "pastry" : [
+            {
+                "name" : "Croissant",
+                "image" : "croissant",
+                "price" : 30
+            },
+            {
+                "name" : "Toast",
+                "image" : "toast",
+                "price" : 20
+            }
+        ]
+    }
+] 
