@@ -285,9 +285,7 @@ body {
   height: 100%;
   display: grid;
   justify-content: center;
-  grid-template-columns: auto auto;
   align-items: center;
-  overflow-y: scroll;
   scrollbar-width: none;
 }
 #merchSect #productCaraousel #merchendises {
@@ -300,8 +298,8 @@ body {
   content: "";
   top: 20px;
   left: 20px;
-  width: 400px;
-  height: 400px;
+  width: 50%;
+  height: 50%;
   border-radius: 50%;
   box-shadow: 3px 3px 10px var(--shadow);
   background-color: var(--accent);
@@ -327,7 +325,7 @@ body {
   background-color: var(--accent-hover);
   border-radius: 20px;
 }
-#merchSect #productCaraousel #merchendises @media (max-width: 480px) {
+@media (max-width: 480px) {
   html {
     font-size: 12px;
   }
@@ -380,6 +378,18 @@ body {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto auto;
   }
+  #merchSect #productCaraousel {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  #merchSect #productCaraousel #merchendises h1 {
+    width: 100%;
+    text-align: center;
+  }
+  #merchSect #productCaraousel #merchendises button {
+    right: 0;
+    transform: translateX(-50%);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -431,5 +441,8 @@ body {
   #menuSect #menuDisplay .display {
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto auto;
+  }
+  #merchSect #productCaraousel {
+    grid-template-columns: auto auto;
   }
 }
