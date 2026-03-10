@@ -25,16 +25,11 @@
   transition: all 0.5s ease-in-out;
   color: var(--color);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  scrollbar-width: none;
   scroll-behavior: smooth;
 }
 body {
-  width: 100vw;
-  background-color: var(--background);
-  overflow-x: hidden;
-}
-section {
   width: 100%;
+  background-color: var(--background);
 }
 .button-nav {
   background-color: var(--base);
@@ -59,7 +54,7 @@ section {
 }
 .sect-title {
   width: 100%;
-  height: 20%;
+  height: 20vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,6 +119,7 @@ section {
 
 #home {
   height: 100vh;
+  width: 100%;
   background: url(src/img/photo/hero-image.png) no-repeat center center/cover;
   color: var(--color);
 }
@@ -146,11 +142,17 @@ section {
   font-weight: 100;
 }
 
-#about #timeline {
+#aboutSect {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+#aboutSect #timeline {
+  width: 100%;
+  height: 80%;
   position: relative;
 }
-#about #timeline::before {
+#aboutSect #timeline::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -159,7 +161,7 @@ section {
   width: 2px;
   background: var(--color);
 }
-#about #timeline .time-box {
+#aboutSect #timeline .time-box {
   width: 50%;
   padding: 20px;
   position: relative;
@@ -167,7 +169,7 @@ section {
   flex-direction: column;
   height: 150px;
 }
-#about #timeline .time-box h1 {
+#aboutSect #timeline .time-box h1 {
   width: 100px;
   height: 50px;
   background-color: var(--accent);
@@ -177,40 +179,40 @@ section {
   border-radius: 20px;
   margin-bottom: 10px;
 }
-#about #timeline .time-box:hover p {
+#aboutSect #timeline .time-box:hover p {
   opacity: 1;
   transform: translateY(0);
 }
-#about #timeline .time-box p {
+#aboutSect #timeline .time-box p {
   opacity: 0;
   transform: translateY(-10px);
 }
-#about #timeline .time-box:nth-child(odd) {
+#aboutSect #timeline .time-box:nth-child(odd) {
   left: 0;
   text-align: right;
   align-items: end;
 }
-#about #timeline .time-box:nth-child(even) {
+#aboutSect #timeline .time-box:nth-child(even) {
   left: 50%;
   text-align: left;
   align-items: baseline;
 }
 
-#menu {
+#menuSect {
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   flex-wrap: wrap;
 }
-#menu #menuTabs {
+#menuSect #menuTabs {
   display: flex;
   gap: 5px;
   height: calc(100%-120px);
 }
-#menu #menuTabs input[type="radio"] {
+#menuSect #menuTabs input[type="radio"] {
   display: none;
 }
-#menu #menuTabs label {
+#menuSect #menuTabs label {
   background-color: var(--accent);
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -218,18 +220,17 @@ section {
   justify-content: center;
   align-items: center;
 }
-#menu #menuTabs label:hover {
+#menuSect #menuTabs label:hover {
   background-color: var(--accent-hover);
 }
-#menu #menuDisplay .display {
+#menuSect #menuDisplay .display {
   width: 100%;
   height: 100%;
   display: none;
   gap: 10px;
   padding: 10px;
-  overflow-x: scroll;
 }
-#menu #menuDisplay .display .products {
+#menuSect #menuDisplay .display .products {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -244,10 +245,10 @@ section {
   align-items: center;
   flex-direction: column;
 }
-#menu #menuDisplay .display .products:hover {
+#menuSect #menuDisplay .display .products:hover {
   opacity: 1;
 }
-#menu #menuDisplay .display .products::before {
+#menuSect #menuDisplay .display .products::before {
   position: absolute;
   content: "";
   top: 0;
@@ -260,19 +261,19 @@ section {
     rgba(0, 0, 0, 0) 90%
   );
 }
-#menu #menuDisplay .display .products h1 {
+#menuSect #menuDisplay .display .products h1 {
   z-index: 50;
   font-family: "YellowTail";
   font-size: 3rem;
 }
-#menu #menuDisplay .display .products button {
+#menuSect #menuDisplay .display .products button {
   width: 100px;
   height: 30px;
   background-color: var(--accent);
   margin-block: 20px;
   z-index: 50;
 }
-#menu #menuDisplay .display .products button:hover {
+#menuSect #menuDisplay .display .products button:hover {
   background-color: var(--accent-hover);
 }
 
@@ -313,25 +314,25 @@ section {
     margin-left: 0;
     font-size: 2rem;
   }
-  #menu #menuTabs {
+  #menuSect #menuTabs {
     width: 100%;
     height: 5%;
     justify-content: center;
   }
-  #menu #menuTabs label {
+  #menuSect #menuTabs label {
     width: 100px;
   }
-  #menu #menuDisplay {
+  #menuSect #menuDisplay {
     width: 100%;
-    height: 75%;
+    height: 95%;
   }
-  #menu #menuDisplay .display {
+  #menuSect #menuDisplay .display {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto auto;
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) {
   html {
     font-size: 14px;
   }
@@ -358,26 +359,26 @@ section {
     font-size: 2rem;
     margin-left: 30px;
   }
-  #menu #menuTabs {
+  #menuSect #menuTabs {
     width: 30%;
     height: 80%;
     flex-direction: column;
   }
-  #menu #menuTabs label {
+  #menuSect #menuTabs label {
     width: 100%;
     height: 60px;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
     transform: translateX(0);
   }
-  #menu #menuTabs label:hover {
+  #menuSect #menuTabs label:hover {
     transform: translateX(-20px);
   }
-  #menu #menuDisplay {
+  #menuSect #menuDisplay {
     width: 70%;
     height: 80%;
   }
-  #menu #menuDisplay .display {
+  #menuSect #menuDisplay .display {
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto auto;
   }

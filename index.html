@@ -16,12 +16,12 @@
         <a href="#home" class="button-nav">Home</a>
         <a href="#about" class="button-nav">About Us</a>
         <a href="#menu" class="button-nav">Menu</a>
-        <a href="#" class="button-nav">Merchandise</a>
+        <a href="#merch" class="button-nav">Merchandise</a>
         <a href="#" class="button-nav">Membership</a>
         <a href="#" class="button-nav">Reserve</a>
         <a href="#" class="button-nav">Contact</a>
       </nav>
-      <span>KOPIPOK Café</span>
+      <span>KOPIPOK Café</span><img src="src/logo.svg" alt="" />
     </section>
     <section id="home">
       <div id="gradientOverlay">
@@ -32,8 +32,8 @@
         </div>
       </div>
     </section>
-    <section id="about">
-      <h1 class="sect-title">Our Journey</h1>
+    <h1 class="sect-title" id="about">Our Journey</h1>
+    <section id="aboutSect">
       <div id="timeline">
         <div class="time-box">
           <h1>2024</h1>
@@ -65,12 +65,23 @@
         </div>
         <div class="time-box">
           <h1>2027</h1>
-          <p><i>(being planned and in progress...)</i></p>
+          <p>
+            >Opened few stalls in mall in few cities like <b>FX Sudirman</b>,
+            <b>Grand Indonesia</b>, <b>Green Pramuka Square </b>in Jakarta.
+            <b>Sumarecon Mall</b> in Tangerang.And <b>Rita Mall</b> in
+            Purwokerto.
+          </p>
+        </div>
+        <div class="time-box">
+          <h1>2028</h1>
+          <p>
+            <i> (On Progress...) </i>
+          </p>
         </div>
       </div>
     </section>
-    <section id="menu">
-      <h1 class="sect-title">Our Menus</h1>
+    <h1 class="sect-title" id="menu">Our Menus</h1>
+    <section id="menuSect">
       <div id="menuTabs">
         <input
           type="radio"
@@ -95,6 +106,16 @@
         <div id="tea" class="display"></div>
         <div id="pastry" class="display"></div>
       </div>
+    </section>
+    <h1 class="sect-title" id="merch">Our Merch</h1>
+    <section id="merchSect">
+      <div id="productCaraousel"></div>
+      <button onclick="prevSlide()">
+        <img src="src/img/svg/prevsymbol.svg" alt="" />
+      </button>
+      <button onclick="nextSlide()">
+        <img src="src/img/svg/nextsymbol.svg" alt="" />
+      </button>
     </section>
     <script src="script.js"></script>
   </body>
