@@ -26,6 +26,7 @@
   color: var(--color);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
 }
 body {
   width: 100%;
@@ -286,7 +287,6 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
-  scrollbar-width: none;
 }
 #merchSect #productCaraousel #merchendises {
   height: 600px;
@@ -325,6 +325,31 @@ body {
   background-color: var(--accent-hover);
   border-radius: 20px;
 }
+
+#memberSect {
+  width: 100%;
+  height: 80vh;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 50px;
+}
+#memberSect .member-card {
+  width: 189px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#memberSect .member-card img {
+  transform: translateY(0);
+}
+#memberSect .member-card:hover img {
+  transform: translateY(-20px);
+  box-shadow: 0 5px 10px var(--shadow);
+}
+
 @media (max-width: 480px) {
   html {
     font-size: 12px;
@@ -444,5 +469,6 @@ body {
   }
   #merchSect #productCaraousel {
     grid-template-columns: auto auto;
+    overflow-y: scroll;
   }
 }
