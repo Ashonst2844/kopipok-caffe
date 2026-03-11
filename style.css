@@ -328,10 +328,8 @@ body {
 
 #memberSect {
   width: 100%;
-  height: 80vh;
   justify-content: center;
   display: grid;
-  grid-template-columns: auto auto auto;
   gap: 50px;
 }
 #memberSect .member-card {
@@ -348,6 +346,47 @@ body {
 #memberSect .member-card:hover img {
   transform: translateY(-20px);
   box-shadow: 0 5px 10px var(--shadow);
+}
+
+#contactSect {
+  background-color: var(--base);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#contactSect #footBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contactSect #footBox div {
+  width: 20%;
+  border-left: 1px solid white;
+  padding: 20px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+#contactSect #footBox #location span,
+#contactSect #footBox #quote i {
+  font-size: larger;
+  font-weight: 600;
+}
+#contactSect #footBox div a {
+  margin-block: 10px;
+  text-decoration: underline;
+}
+#contactSect #footBox div a:hover {
+  font-weight: 600;
+}
+#contactSect footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10%;
 }
 
 @media (max-width: 480px) {
@@ -415,6 +454,15 @@ body {
     right: 0;
     transform: translateX(-50%);
   }
+  #memberSect {
+    grid-template-columns: auto;
+  }
+  #contactSect #footBox {
+    flex-wrap: wrap;
+  }
+  #contactSect #footBox div {
+    width: 100%;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -470,5 +518,18 @@ body {
   #merchSect #productCaraousel {
     grid-template-columns: auto auto;
     overflow-y: scroll;
+  }
+  #memberSect {
+    grid-template-columns: auto auto auto;
+    height: 80vh;
+  }
+  #contactSect {
+    height: 80vh;
+  }
+  #contactSect #footBox {
+    height: 90%;
+  }
+  #contactSect #footBox div {
+    width: 20%;
   }
 }
